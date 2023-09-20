@@ -1,9 +1,5 @@
 package com.hemebiotech.analytics;
 
-
-import java.util.List;
-import java.util.Map;
-
 /**
  * The Main class is the entry point of the application. It reads symptom data from a file,
  * counts and sorts the symptoms, and writes the results to an output file.
@@ -26,4 +22,5 @@ public class Main {
 
         counter.processSymptoms();
     }
+
 }
