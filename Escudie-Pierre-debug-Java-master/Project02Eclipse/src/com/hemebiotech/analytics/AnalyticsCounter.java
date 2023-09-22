@@ -29,7 +29,7 @@ public class AnalyticsCounter {
     }
 
     /**
-     * Retrieves the list of symptoms from the configured data source.
+     * Retrieves the liscct of symptoms from the configured data source.
      *
      * @return A list of symptoms read from the data source.
      */
@@ -48,10 +48,10 @@ public class AnalyticsCounter {
     public Map<String, Integer> countSymptoms(List<String> symptomsList) {
         Map<String, Integer> countedSymptoms = new HashMap<>();
 
-        if (symptomsList != null) {
+        if (symptomsList != null && !symptomsList.isEmpty()) {
 
             for (String symptom : symptomsList) {
-                if (symptom != null) {
+                if (symptom != null && !symptom.isEmpty()) {
                     countedSymptoms.put(symptom, countedSymptoms.getOrDefault(symptom, 0) + 1);
                 }
             }
@@ -67,7 +67,7 @@ public class AnalyticsCounter {
      */
 
     public Map<String, Integer> sortSymptoms(Map<String, Integer> countedSymptoms) {
-        if (countedSymptoms == null) {
+        if (countedSymptoms == null || countedSymptoms.isEmpty() ) {
             return new TreeMap<>();
         }
         return new TreeMap<>(countedSymptoms);
@@ -80,7 +80,9 @@ public class AnalyticsCounter {
      */
 
     public void writeSymptoms(Map<String, Integer> sortedSymptoms) {
-        writer.writeSymptoms(sortedSymptoms);
+        if(sortedSymptoms != null && !sortedSymptoms.isEmpty()) {
+            writer.writeSymptoms(sortedSymptoms);
+        }
     }
 
     /**
