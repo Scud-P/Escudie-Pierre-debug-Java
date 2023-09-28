@@ -67,7 +67,7 @@ public class AnalyticsCounter {
      */
 
     public Map<String, Integer> sortSymptoms(Map<String, Integer> countedSymptoms) {
-        if (countedSymptoms == null || countedSymptoms.isEmpty() ) {
+        if (countedSymptoms == null || countedSymptoms.isEmpty()) {
             return new TreeMap<>();
         }
         return new TreeMap<>(countedSymptoms);
@@ -80,7 +80,7 @@ public class AnalyticsCounter {
      */
 
     public void writeSymptoms(Map<String, Integer> sortedSymptoms) {
-        if(sortedSymptoms != null && !sortedSymptoms.isEmpty()) {
+        if (sortedSymptoms != null && !sortedSymptoms.isEmpty()) {
             writer.writeSymptoms(sortedSymptoms);
         }
     }

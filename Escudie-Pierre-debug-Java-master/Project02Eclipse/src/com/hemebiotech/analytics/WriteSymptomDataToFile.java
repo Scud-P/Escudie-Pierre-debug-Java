@@ -19,7 +19,7 @@ public class WriteSymptomDataToFile implements ISymptomWriter {
      */
     @Override
     public void writeSymptoms(Map<String, Integer> sortedSymptoms) {
-        if (sortedSymptoms != null && !sortedSymptoms.isEmpty() ) {
+        if (sortedSymptoms != null && !sortedSymptoms.isEmpty()) {
             try (FileWriter writer = new FileWriter("result.out")) {
 
                 for (Map.Entry<String, Integer> entry : sortedSymptoms.entrySet()) {
