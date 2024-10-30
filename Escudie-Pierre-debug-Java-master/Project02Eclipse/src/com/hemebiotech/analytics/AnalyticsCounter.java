@@ -29,7 +29,7 @@ public class AnalyticsCounter {
     }
 
     /**
-     * Retrieves the liscct of symptoms from the configured data source.
+     * Retrieves the list of symptoms from the configured data source.
      *
      * @return A list of symptoms read from the data source.
      */
